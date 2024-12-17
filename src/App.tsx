@@ -8,7 +8,6 @@ import "@quillforms/renderer-core/build-style/style.css";
 import { registerCoreBlocks } from "@quillforms/react-renderer-utils";
 import { saveAs } from "file-saver";
 import RadarChart from "./RadarChart";
-import "./styles.css";
 import "./custom-slider-block";
 import "./custom-statement-block";
 import "./custom-welcome-screen-block";
@@ -18,15 +17,18 @@ const App = () => {
   const [chartData, setChartData] = useState(null);
   // const [buttonColor, setButtonColor] = useState("#ccc");
 
-  const answers = useFormAnswers();
+  // const answers = useFormAnswers();
 
   function saveToFile(jsonData, fileName, fileType) {
     const blob = new Blob([jsonData], { type: fileType });
     saveAs(blob, fileName);
   }
 
+  const [currentStep, setCurrentStep] = useState(0);
+
   // React.useEffect(() => {
   //   if (answers) {
+  //     console.log(answers)
   //     const sliderBlockKeys = Object.keys(answers).filter(
   //       (key) =>
   //         answers[key].value !== null &&
@@ -40,6 +42,7 @@ const App = () => {
   //     }
   //   }
   // }, [answers]);
+
   return (
     <div style={{ width: "100%", height: "100vh" }}>
       {chartData ? (
@@ -71,13 +74,12 @@ const App = () => {
                 name: "statement",
                 id: "dhrnpq5",
                 attributes: {
-                  title: "statement1",
                   label: "Continuous Exploration",
-                  attachment: {
-                    type: "image",
-                    url: "https://scaledagileframework.com/wp-content/uploads/2023/01/DevSecOps_Keystone_CE.svg",
-                  },
-                  attachmentMaxWidth: "100px",
+                  description: `
+                  Unleashing innovation through constant learning.
+                  
+                  Explore how your team leverages data, insights, and collaboration to drive continuous improvement and innovation. Let’s assess your ability to stay ahead of the curve!
+                  `,
                 },
               },
               {

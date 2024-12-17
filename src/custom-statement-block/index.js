@@ -1,5 +1,5 @@
 import { registerBlockType } from "@quillforms/blocks";
-import CustomStatementDisplay from "./display";
+import StatementBlock from "./display";
 
 registerBlockType("statement", {
   attributes: {
@@ -7,14 +7,10 @@ registerBlockType("statement", {
       type: "string",
       default: "",
     },
-    attachment: {
-      type: "object",
-      default: null,
-    },
-    attachmentMaxWidth: {
+    description: {
       type: "string",
-      default: "400px",
+      default: "",
     },
   },
-  display: CustomStatementDisplay,
+  display: StatementBlock,
 });

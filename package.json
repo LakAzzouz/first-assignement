@@ -5,6 +5,9 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^6.2.0",
     "@quillforms/react-renderer-utils": "5.10.0",
     "@quillforms/renderer-core": "^5.9.0",
     "chart.js": "4.4.6",

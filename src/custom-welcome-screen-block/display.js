@@ -4,6 +4,17 @@ import { useRendererStoreActions } from "@quillforms/renderer-core";
 
 const WelcomeScreenBlock = () => {
   const { goToBlock } = useRendererStoreActions();
+  // const { walkPath } = useSelect((select) => {
+	// 	return {
+	// 		walkPath: select('quillForms/renderer-core').getWalkPath(),
+	// 	};
+	// });
+
+  // let next = noop;
+
+	// if (walkPath[0] && walkPath[0].id) {
+	// 	next = () => goToBlock(walkPath[0].id);
+	// }
 
   return (
     <div
