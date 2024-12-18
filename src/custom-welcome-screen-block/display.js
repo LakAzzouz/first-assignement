@@ -4,7 +4,7 @@ import { useRendererStoreActions } from "@quillforms/renderer-core";
 
 const WelcomeScreenBlock = ({ attributes }) => {
   const { goToBlock } = useRendererStoreActions();
-  const { label, description } = attributes;
+  const { label, description, type } = attributes;
 
   return (
     <div
@@ -33,44 +33,91 @@ const WelcomeScreenBlock = ({ attributes }) => {
           text-align: left;
         `}
       >
-        <div
-          className={css`
-            font-size: 24px;
-            font-weight: 900;
-            color: #2a2a2a;
-            font-family: "Montserrat", sans-serif;
-            margin-bottom: 16px;
-          `}
-        >
-          {label}
-        </div>
-        <div
-          className={css`
-            font-size: 16px;
-            line-height: 19.36px;
-            font-weight: 400;
-            color: #2a2a2a;
-            opacity: 0.8;
-            font-family: "Inter", sans-serif;
-            margin-bottom: 16px;
-          `}
-          dangerouslySetInnerHTML={{ __html: description }}
-        ></div>
-        <button
-          onClick={() => goToBlock("dhrnpq5")}
-          style={{
-            backgroundColor: "#2B35EE",
-            color: "#ffffff",
-            border: "none",
-            borderRadius: "18px",
-            padding: "10px 16px",
-            fontSize: "14px",
-            cursor: "pointer",
-            transition: "background-color 0.3s ease, transform 0.2s ease",
-          }}
-        >
-          Let's start!
-        </button>
+        {type === 0 ? (
+          <>
+            {/* Welcome Screen Content */}
+            <div
+              className={css`
+                font-size: 24px;
+                font-weight: 900;
+                color: #2a2a2a;
+                font-family: "Montserrat", sans-serif;
+                margin-bottom: 16px;
+              `}
+            >
+              {label}
+            </div>
+            <div
+              className={css`
+                font-size: 16px;
+                line-height: 19.36px;
+                font-weight: 400;
+                color: #2a2a2a;
+                opacity: 0.8;
+                font-family: "Inter", sans-serif;
+                margin-bottom: 16px;
+              `}
+              dangerouslySetInnerHTML={{ __html: description }}
+            ></div>
+            <button
+              onClick={() => goToBlock("dhrnpq5")}
+              style={{
+                backgroundColor: "#2B35EE",
+                color: "#ffffff",
+                border: "none",
+                borderRadius: "18px",
+                padding: "10px 16px",
+                fontSize: "14px",
+                cursor: "pointer",
+                transition: "background-color 0.3s ease, transform 0.2s ease",
+              }}
+            >
+              Let's start!
+            </button>
+          </>
+        ) : (
+          <>
+            {/* Statement Content */}
+            <div
+              className={css`
+                font-size: 24px;
+                font-weight: 900;
+                color: #2a2a2a;
+                font-family: "Montserrat", sans-serif;
+                margin-bottom: 16px;
+              `}
+            >
+              {label}
+            </div>
+            <div
+              className={css`
+                font-size: 16px;
+                line-height: 19.36px;
+                font-weight: 400;
+                color: #2a2a2a;
+                opacity: 0.6;
+                font-family: "Inter", sans-serif;
+                margin-bottom: 16px;
+              `}
+              dangerouslySetInnerHTML={{ __html: description }}
+            ></div>
+            <button
+              onClick={() => goToBlock("statement-next-block")}
+              style={{
+                backgroundColor: "#28a745",
+                color: "#ffffff",
+                border: "none",
+                borderRadius: "18px",
+                padding: "10px 16px",
+                fontSize: "14px",
+                cursor: "pointer",
+                transition: "background-color 0.3s ease, transform 0.2s ease",
+              }}
+            >
+              Continue to Statement
+            </button>
+          </>
+        )}
       </div>
     </div>
   );

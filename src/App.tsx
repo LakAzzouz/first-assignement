@@ -65,17 +65,19 @@ const App = () => {
                     - A detailed report with personalized recommendations<br><br>
                     Let's unlock your full potential together. Ready to begin?
                   `,
+                  type: 0,
                 },
               },
               {
-                name: "statement",
+                name: "welcome-screen",
                 id: "dhrnpq5",
                 attributes: {
                   label: "1. Continuous Exploration",
                   description: `
-                  Unleashing innovation through constant learning. <br>
-                  Explore how your team leverages data, insights, and collaboration to drive continuous improvement and innovation. Let’s assess your ability to stay ahead of the curve!
+                    Unleashing innovation through constant learning. <br>
+                    Explore how your team leverages data, insights, and collaboration to drive continuous improvement and innovation. Let’s assess your ability to stay ahead of the curve!
                   `,
+                  type: 1,
                 },
               },
               {
