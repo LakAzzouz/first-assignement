@@ -71,13 +71,12 @@ const App = () => {
                 },
               },
               {
-                name: "statement",
+                name: "blocklib-statement-block",
                 id: "dhrnpq5",
                 attributes: {
-                  label: "Continuous Exploration",
+                  label: "1. Continuous Exploration",
                   description: `
-                  Unleashing innovation through constant learning.
-                  
+                  Unleashing innovation through constant learning. <br>
                   Explore how your team leverages data, insights, and collaboration to drive continuous improvement and innovation. Let’s assess your ability to stay ahead of the curve!
                   `,
                 },

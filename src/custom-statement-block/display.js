@@ -2,9 +2,10 @@ import React from "react";
 import { css } from "emotion";
 import { useRendererStoreActions } from "@quillforms/renderer-core";
 
-const StatementBlock = () => {
+const StatementBlock = ({ attributes }) => {
   const { goToBlock } = useRendererStoreActions();
-  
+  const { label, description } = attributes;
+
   return (
     <div
       className={css`
@@ -19,7 +20,11 @@ const StatementBlock = () => {
     >
       <div
         className={css`
-          background: linear-gradient(124.98deg, #fffcf11a 29.07%, #c2a0f11a 87.88%);
+          background: linear-gradient(
+            124.98deg,
+            #fffcf11a 29.07%,
+            #c2a0f11a 87.88%
+          );
           width: 528px;
           box-shadow: 0px 12px 24px 0px #8e8da83d, 0px 0px 13px 0px #8e8da81a;
           border-radius: 12px;
@@ -30,49 +35,27 @@ const StatementBlock = () => {
       >
         <div
           className={css`
+            font-size: 24px;
+            font-weight: 900;
+            color: #2a2a2a;
+            font-family: "Montserrat", sans-serif;
             margin-bottom: 16px;
           `}
         >
-          <h1
-            className={css`
-              font-size: 24px;
-              font-weight: 900;
-              color: #2a2a2a;
-              font-family: "Montserrat", sans-serif;
-              margin: 0;
-            `}
-          >
-            1. Continuous Exploration
-          </h1>
-          <p
-            className={css`
-              font-size: 16px;
-              color: #2a2a2a;
-              opacity: 0.8;
-              weight: 400;
-              line-height: 19.36px;
-              font-family: "Inter", sans-serif;
-              margin: 4px 0 0;
-            `}
-          >
-            Unleashing innovation through constant learning.
-          </p>
+          {label}
         </div>
-        <p
+        <div
           className={css`
             font-size: 16px;
             line-height: 19.36px;
-            weight: 400;
+            font-weight: 400;
             color: #2a2a2a;
-            opacity: 0.6;
+            opacity: 0.8;
             font-family: "Inter", sans-serif;
             margin-bottom: 16px;
           `}
-        >
-          Explore how your team leverages data, insights, and collaboration to
-          drive continuous improvement and innovation. Let’s assess your ability
-          to stay ahead of the curve!
-        </p>
+          dangerouslySetInnerHTML={{ __html: description }}
+        ></div>
         <button
           onClick={() => goToBlock("m0sphvc")}
           style={{
