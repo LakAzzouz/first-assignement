@@ -2,19 +2,9 @@ import React from "react";
 import { css } from "emotion";
 import { useRendererStoreActions } from "@quillforms/renderer-core";
 
-const WelcomeScreenBlock = () => {
+const WelcomeScreenBlock = ({ attributes }) => {
   const { goToBlock } = useRendererStoreActions();
-  // const { walkPath } = useSelect((select) => {
-	// 	return {
-	// 		walkPath: select('quillForms/renderer-core').getWalkPath(),
-	// 	};
-	// });
-
-  // let next = noop;
-
-	// if (walkPath[0] && walkPath[0].id) {
-	// 	next = () => goToBlock(walkPath[0].id);
-	// }
+  const { label, description } = attributes;
 
   return (
     <div
@@ -45,84 +35,27 @@ const WelcomeScreenBlock = () => {
       >
         <div
           className={css`
+            font-size: 24px;
+            font-weight: 900;
+            color: #2a2a2a;
+            font-family: "Montserrat", sans-serif;
             margin-bottom: 16px;
           `}
         >
-          <h1
-            className={css`
-              font-size: 24px;
-              font-weight: 900;
-              color: #2a2a2a;
-              font-family: "Montserrat", sans-serif;
-              margin: 0;
-            `}
-          >
-            Welcome to X-SQUAD.
-          </h1>
-          <p
-            className={css`
-              font-size: 16px;
-              color: #2a2a2a;
-              opacity: 0.8;
-              weight: 400;
-              line-height: 19.36px;
-              font-family: "Inter", sans-serif;
-              margin: 4px 0 0;
-            `}
-          >
-            Your journey to DevOps excellence starts here !
-          </p>
+          {label}
         </div>
-
-        <p
+        <div
           className={css`
             font-size: 16px;
             line-height: 19.36px;
-            weight: 400;
+            font-weight: 400;
             color: #2a2a2a;
-            opacity: 0.6;
+            opacity: 0.8;
             font-family: "Inter", sans-serif;
             margin-bottom: 16px;
           `}
-        >
-          Take this quick and comprehensive level assessment to evaluate your
-          organization’s DevOps maturity. Discover your strengths, identify
-          areas of improvement, and get actionable insights to accelerate your
-          growth.
-        </p>
-
-        <ul
-          className={css`
-            font-size: 16px;
-            font-family: "Inter", sans-serif;
-            line-height: 19.36px;
-            color: #2a2a2a;
-            weight: 700;
-            opacity: 0.6;
-            text-align: left;
-            padding: 0;
-            list-style-type: none;
-          `}
-        >
-          <li>
-            🌟 <b>What to expect ?</b>
-          </li>
-          <li>• A series of targeted questions</li>
-          <li>• A detailed report with personalized recommendations</li>
-        </ul>
-
-        <p
-          className={css`
-            font-size: 16px;
-            font-family: "Inter", sans-serif;
-            line-height: 19.36px;
-            color: #2a2a2a;
-            opacity: 0.6;
-            text-align: left;
-          `}
-        >
-          Let’s unlock your full potential together. Ready to begin ?
-        </p>
+          dangerouslySetInnerHTML={{ __html: description }}
+        ></div>
         <button
           onClick={() => goToBlock("dhrnpq5")}
           style={{
