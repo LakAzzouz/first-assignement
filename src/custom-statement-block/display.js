@@ -3,7 +3,7 @@ import { css } from "emotion";
 import { useRendererStoreActions } from "@quillforms/renderer-core";
 
 const StatementBlock = ({ attributes }) => {
-  const { goToBlock } = useRendererStoreActions();
+  const { goNext } = useRendererStoreActions();
   const { label, description } = attributes;
 
   return (
@@ -25,7 +25,7 @@ const StatementBlock = ({ attributes }) => {
             #fffcf11a 29.07%,
             #c2a0f11a 87.88%
           );
-          width: 528px;
+          width: 600px;
           box-shadow: 0px 12px 24px 0px #8e8da83d, 0px 0px 13px 0px #8e8da81a;
           border-radius: 12px;
           border: 2px solid #ffffff;
@@ -47,33 +47,68 @@ const StatementBlock = ({ attributes }) => {
         <div
           className={css`
             font-size: 16px;
-            line-height: 19.36px;
-            font-weight: 400;
+            line-height: 1.6;
             color: #2a2a2a;
             opacity: 0.8;
             font-family: "Inter", sans-serif;
-            margin-bottom: 16px;
+            margin-bottom: 24px;
           `}
-          dangerouslySetInnerHTML={{ __html: description }}
+          dangerouslySetInnerHTML={{ __html: markdownToHTML(description) }}
         ></div>
+        
+        <div
+          className={css`
+            display: flex;
+            gap: 12px;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+          `}
+        >
+        </div>
         <button
-          onClick={() => goToBlock("m0sphvc")}
-          style={{
-            backgroundColor: "#2B35EE",
-            color: "#ffffff",
-            border: "none",
-            borderRadius: "18px",
-            padding: "10px 16px",
-            fontSize: "14px",
-            cursor: "pointer",
-            transition: "background-color 0.3s ease, transform 0.2s ease",
-          }}
+          onClick={() => goNext()}
+          className={css`
+            background-color: #2b35ee;
+            color: #ffffff;
+            border: none;
+            border-radius: 18px;
+            padding: 10px 16px;
+            font-size: 14px;
+            font-family: "Inter", sans-serif;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+
+            &:hover {
+              background-color: #1a25bb;
+              transform: scale(1.05);
+            }
+          `}
         >
           Continue
         </button>
+        <span
+            className={css`
+              font-size: 16px;
+              color: #000000;
+              margin-left: 8px;
+              font-family: "Inter", sans-serif;
+            `}
+          >
+            press <strong>Enter ↵</strong>
+          </span>
       </div>
     </div>
   );
+};
+
+const markdownToHTML = (markdown) => {
+  const html = markdown
+    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>") // Gras
+    .replace(/__(.*?)__/g, "<strong>$1</strong>") // Gras alternatif 
+    .replace(/_(.*?)_/g, "<em>$1</em>") // Italic
+    .replace(/\n/g, "<br />") // Retour à la ligne
+  return html;
 };
 
 export default StatementBlock;

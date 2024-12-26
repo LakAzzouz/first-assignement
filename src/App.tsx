@@ -57,16 +57,15 @@ const App = () => {
                 id: "jg1401r",
                 attributes: {
                   label: "Welcome to X-SQUAD.",
-                  description: `
-                    Your journey to DevOps excellence starts here!
+                  description: `<span style="opacity: 0.8;">Your journey to DevOps excellence starts here!</span>
+                  <span style="opacity: 0.6;">
+                  Take this quick and comprehensive level assessment to evaluate your organization's DevOps maturity. Discover your strengths, identify areas of improvement, and get actionable insights to accelerate your growth.
 
-                    Take this quick and comprehensive level assessment to evaluate your organization's DevOps maturity. Discover your strengths, identify areas of improvement, and get actionable insights to accelerate your growth.
-
-                    ✨ What to expect?
-                    - A series of targeted questions
-                    - A detailed report with personalized recommendations
-
-                    Let's unlock your full potential together. Ready to begin?
+                  ✨ **What to expect?**
+                  • A series of targeted questions  
+                  • A detailed report with personalized recommendations  
+                  
+                  Let’s unlock your full potential together. Ready to begin?</span>
                   `,
                 },
               },
@@ -75,9 +74,11 @@ const App = () => {
                 id: "dhrnpq5",
                 attributes: {
                   label: "1. Continuous Exploration",
-                  description: `
-                  Unleashing innovation through constant learning. <br>
-                  Explore how your team leverages data, insights, and collaboration to drive continuous improvement and innovation. Let’s assess your ability to stay ahead of the curve!
+                  description: `<span style="opacity: 0.8;">Unleashing innovation through constant learning.</span>
+
+                  Hypothesis Collaborate & Research Architect Synthesize
+
+                  <span style="opacity: 0.6;">Explore how your team leverages data, insights, and collaboration to drive continuous improvement and innovation. Let’s assess your ability to stay ahead of the curve!</span>
                   `,
                 },
               },
@@ -222,16 +223,16 @@ const App = () => {
                 },
               },
               {
-                name: "custom-statement-block",
+                name: "blocklib-statement-block",
                 id: "pg6vren",
                 attributes: {
-                  title: "section2",
-                  label: "Continuous Integration",
-                  attachment: {
-                    type: "image",
-                    url: "https://scaledagileframework.com/wp-content/uploads/2023/01/DevSecOps_Keystone_CI.svg",
-                  },
-                  attachmentMaxWidth: "400px",
+                  label: "2. Continuous Integration",
+                  h1: "Streamlining development through seamless collaboration.",
+                  h2: "Stage",
+                  h3: "Test End-To-End",
+                  h4: "Build",
+                  h5: "Develop",
+                  p1: "Discover how your team integrates code frequently and efficiently, ensuring quality and speed in your delivery pipeline. Let’s evaluate your CI practices to drive smoother workflows!",
                 },
               },
               {
@@ -378,13 +379,13 @@ const App = () => {
                 name: "custom-statement-block",
                 id: "zcsglif",
                 attributes: {
-                  title: "section3",
-                  label: "Continuous Deployment",
-                  attachment: {
-                    type: "image",
-                    url: "https://scaledagileframework.com/wp-content/uploads/2023/01/DevSecOps_Keystone_CD.svg",
-                  },
-                  attachmentMaxWidth: "400px",
+                  label: "3. Continuous deployment",
+                  h1: "Delivering value at the speed of innovation.",
+                  h2: "Respond",
+                  h3: "Monitor",
+                  h4: "Verify",
+                  h5: "Deploy",
+                  p1: "Evaluate your team’s ability to deploy code seamlessly and automatically, ensuring rapid delivery of features with confidence. Let’s assess how close you are to achieving uninterrupted deployments!",
                 },
               },
               {
@@ -528,16 +529,16 @@ const App = () => {
                 },
               },
               {
-                name: "custom-statement-block",
+                name: "blocklib-statement-block",
                 id: "jtwe62b",
                 attributes: {
-                  title: "section4",
-                  label: "Release on Demand",
-                  attachment: {
-                    type: "image",
-                    url: "https://scaledagileframework.com/wp-content/uploads/2023/01/Release_on_Demand_F04-1.svg",
-                  },
-                  attachmentMaxWidth: "400px",
+                  label: "4. Release on demand",
+                  h1: "Deliver the right value, at the right time.",
+                  h2: "Release",
+                  h3: "Stabilize",
+                  h4: "Measure",
+                  h5: "Learn",
+                  p1: "Evaluate how your organization controls and schedules releases to maximize value delivery. Let’s explore how adaptable and efficient your release processes truly are.",
                 },
               },
               {

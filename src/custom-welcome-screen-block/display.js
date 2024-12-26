@@ -2,19 +2,9 @@ import React from "react";
 import { css } from "emotion";
 import { useRendererStoreActions } from "@quillforms/renderer-core";
 
-const WelcomeScreenBlock = () => {
+const WelcomeScreenBlock = ({ attributes }) => {
   const { goToBlock } = useRendererStoreActions();
-  // const { walkPath } = useSelect((select) => {
-	// 	return {
-	// 		walkPath: select('quillForms/renderer-core').getWalkPath(),
-	// 	};
-	// });
-
-  // let next = noop;
-
-	// if (walkPath[0] && walkPath[0].id) {
-	// 	next = () => goToBlock(walkPath[0].id);
-	// }
+  const { label, description } = attributes;
 
   return (
     <div
@@ -45,7 +35,7 @@ const WelcomeScreenBlock = () => {
       >
         <div
           className={css`
-            margin-bottom: 16px;
+            margin-bottom: 1px;
           `}
         >
           <h1
@@ -57,90 +47,65 @@ const WelcomeScreenBlock = () => {
               margin: 0;
             `}
           >
-            Welcome to X-SQUAD.
+            {label}
           </h1>
-          <p
-            className={css`
-              font-size: 16px;
-              color: #2a2a2a;
-              opacity: 0.8;
-              weight: 400;
-              line-height: 19.36px;
-              font-family: "Inter", sans-serif;
-              margin: 4px 0 0;
-            `}
-          >
-            Your journey to DevOps excellence starts here !
-          </p>
         </div>
 
-        <p
+        <div
           className={css`
             font-size: 16px;
-            line-height: 19.36px;
-            weight: 400;
             color: #2a2a2a;
-            opacity: 0.6;
+            line-height: 1.5;
             font-family: "Inter", sans-serif;
             margin-bottom: 16px;
           `}
-        >
-          Take this quick and comprehensive level assessment to evaluate your
-          organization’s DevOps maturity. Discover your strengths, identify
-          areas of improvement, and get actionable insights to accelerate your
-          growth.
-        </p>
-
-        <ul
-          className={css`
-            font-size: 16px;
-            font-family: "Inter", sans-serif;
-            line-height: 19.36px;
-            color: #2a2a2a;
-            weight: 700;
-            opacity: 0.6;
-            text-align: left;
-            padding: 0;
-            list-style-type: none;
-          `}
-        >
-          <li>
-            🌟 <b>What to expect ?</b>
-          </li>
-          <li>• A series of targeted questions</li>
-          <li>• A detailed report with personalized recommendations</li>
-        </ul>
-
-        <p
-          className={css`
-            font-size: 16px;
-            font-family: "Inter", sans-serif;
-            line-height: 19.36px;
-            color: #2a2a2a;
-            opacity: 0.6;
-            text-align: left;
-          `}
-        >
-          Let’s unlock your full potential together. Ready to begin ?
-        </p>
+          dangerouslySetInnerHTML={{ __html: markdownToHTML(description) }}
+        ></div>
         <button
           onClick={() => goToBlock("dhrnpq5")}
-          style={{
-            backgroundColor: "#2B35EE",
-            color: "#ffffff",
-            border: "none",
-            borderRadius: "18px",
-            padding: "10px 16px",
-            fontSize: "14px",
-            cursor: "pointer",
-            transition: "background-color 0.3s ease, transform 0.2s ease",
-          }}
+          className={css`
+            background-color: #2b35ee;
+            color: #ffffff;
+            border: none;
+            border-radius: 18px;
+            padding: 10px 16px;
+            font-size: 14px;
+            font-family: "Inter", sans-serif;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+
+            &:hover {
+              background-color: #1a25bb;
+              transform: scale(1.05);
+            }
+          `}
         >
-          Let's start!
+          Let’s start!
         </button>
+        <span
+          className={css`
+            font-size: 16px;
+            color: #000000;
+            margin-left: 8px;
+            font-family: "Inter", sans-serif;
+          `}
+        >
+          press <strong>Enter ↵</strong>
+        </span>
       </div>
     </div>
   );
+};
+
+const markdownToHTML = (markdown) => {
+  const html = markdown
+    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>") // Gras
+    .replace(/__(.*?)__/g, "<strong>$1</strong>") // Gras alternatif
+    .replace(/_(.*?)_/g, "<em>$1</em>") // Italic
+    .replace(/\n/g, "<br />") // Retour à la ligne
+    .replace(/- (.*?)\n/g, "<li>$1</li>") // Liste
+    .replace(/✨/g, "✨"); // Emoji
+  return html;
 };
 
 export default WelcomeScreenBlock;
