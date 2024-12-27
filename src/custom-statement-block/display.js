@@ -8,16 +8,29 @@ const StatementBlock = ({ attributes }) => {
 
   return (
     <div
-      className={css`
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100vh;
-        background-color: #f2f1f1;
-      `}
-    >
+    className={css`
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100vh;
+      background-color: #f2f1f1;
+
+      .title {
+        display: inline-block;
+        border: 1px solid #2b35ee;
+        border-radius: 20px;
+        padding: 8px 8px;
+        font-size: 12px;
+        color: #2b35ee;
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        margin: 4px;
+        text-align: center;
+      }
+    `}
+  >
       <div
         className={css`
           background: linear-gradient(
@@ -105,9 +118,10 @@ const StatementBlock = ({ attributes }) => {
 const markdownToHTML = (markdown) => {
   const html = markdown
     .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>") // Gras
-    .replace(/__(.*?)__/g, "<strong>$1</strong>") // Gras alternatif 
-    .replace(/_(.*?)_/g, "<em>$1</em>") // Italic
+    .replace(/__(.*?)__/g, "<strong>$1</strong>") // Gras alternatif
+    .replace(/_(.*?)_/g, "<em>$1</em>") // Italique
     .replace(/\n/g, "<br />") // Retour à la ligne
+    .replace(/\[btn\](.*?)\[\/btn\]/g, '<span class="title">$1</span>'); // Apparence bouton
   return html;
 };
 

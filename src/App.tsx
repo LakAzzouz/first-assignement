@@ -16,6 +16,7 @@ registerCoreBlocks();
 const App = () => {
   const [chartData, setChartData] = useState(null);
   // const [buttonColor, setButtonColor] = useState("#ccc");
+  
 
   // const answers = useFormAnswers();
 
@@ -23,8 +24,6 @@ const App = () => {
     const blob = new Blob([jsonData], { type: fileType });
     saveAs(blob, fileName);
   }
-
-  const [currentStep, setCurrentStep] = useState(0);
 
   // React.useEffect(() => {
   //   if (answers) {
@@ -75,11 +74,10 @@ const App = () => {
                 attributes: {
                   label: "1. Continuous Exploration",
                   description: `<span style="opacity: 0.8;">Unleashing innovation through constant learning.</span>
-
-                  Hypothesis Collaborate & Research Architect Synthesize
-
-                  <span style="opacity: 0.6;">Explore how your team leverages data, insights, and collaboration to drive continuous improvement and innovation. Let’s assess your ability to stay ahead of the curve!</span>
-                  `,
+                  <span>
+                  [btn]Hypothesis[/btn] [btn]Collaborate & Research[/btn] [btn]Architect[/btn] [btn]Synthesize[/btn]</span>
+                  <span style="opacity: 0.6;">
+                  Explore how your team leverages data, insights, and collaboration to drive continuous improvement and innovation. Let’s assess your ability to stay ahead of the curve!</span>`,
                 },
               },
               {
@@ -227,12 +225,11 @@ const App = () => {
                 id: "pg6vren",
                 attributes: {
                   label: "2. Continuous Integration",
-                  h1: "Streamlining development through seamless collaboration.",
-                  h2: "Stage",
-                  h3: "Test End-To-End",
-                  h4: "Build",
-                  h5: "Develop",
-                  p1: "Discover how your team integrates code frequently and efficiently, ensuring quality and speed in your delivery pipeline. Let’s evaluate your CI practices to drive smoother workflows!",
+                  description: `<span style="opacity: 0.8;">Streamlining development through seamless collaboration.</span>
+                  <span>
+                  [btn]Stage[/btn] [btn]Test End-To-End[/btn] [btn]Build[/btn] [btn]Develop[/btn]</span>
+                  <span style="opacity: 0.6;">
+                  Discover how your team integrates code frequently and efficiently, ensuring quality and speed in your delivery pipeline. Let’s evaluate your CI practices to drive smoother workflows!</span>`,
                 },
               },
               {
@@ -376,16 +373,15 @@ const App = () => {
                 },
               },
               {
-                name: "custom-statement-block",
+                name: "blocklib-statement-block",
                 id: "zcsglif",
                 attributes: {
                   label: "3. Continuous deployment",
-                  h1: "Delivering value at the speed of innovation.",
-                  h2: "Respond",
-                  h3: "Monitor",
-                  h4: "Verify",
-                  h5: "Deploy",
-                  p1: "Evaluate your team’s ability to deploy code seamlessly and automatically, ensuring rapid delivery of features with confidence. Let’s assess how close you are to achieving uninterrupted deployments!",
+                  description: `<span style="opacity: 0.8;">Delivering value at the speed of innovation.</span>
+                  <span>
+                  [btn]Respond[/btn] [btn]Monitor[/btn] [btn]Verify[/btn] [btn]Deploy[/btn]</span>
+                  <span style="opacity: 0.6;">
+                  Evaluate your team’s ability to deploy code seamlessly and automatically, ensuring rapid delivery of features with confidence. Let’s assess how close you are to achieving uninterrupted deployments!</span>`,
                 },
               },
               {
@@ -533,12 +529,11 @@ const App = () => {
                 id: "jtwe62b",
                 attributes: {
                   label: "4. Release on demand",
-                  h1: "Deliver the right value, at the right time.",
-                  h2: "Release",
-                  h3: "Stabilize",
-                  h4: "Measure",
-                  h5: "Learn",
-                  p1: "Evaluate how your organization controls and schedules releases to maximize value delivery. Let’s explore how adaptable and efficient your release processes truly are.",
+                  description: `<span style="opacity: 0.8;">Deliver the right value, at the right time.</span>
+                  <span>
+                  [btn]Release[/btn] [btn]Stabilize[/btn] [btn]Measure[/btn] [btn]Learn[/btn]</span>
+                  <span style="opacity: 0.6;">
+                  Evaluate how your organization controls and schedules releases to maximize value delivery. Let’s explore how adaptable and efficient your release processes truly are.</span>`,
                 },
               },
               {
