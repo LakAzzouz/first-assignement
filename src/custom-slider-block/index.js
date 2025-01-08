@@ -3,6 +3,10 @@ import display from "./display";
 
 registerBlockType("custom-slider-block", {
   attributes: {
+    titles: {
+      type: "string",
+      default: "",
+    },
     label: {
       type: "string",
       default: "Rate your experience",

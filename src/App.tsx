@@ -16,7 +16,6 @@ registerCoreBlocks();
 const App = () => {
   const [chartData, setChartData] = useState(null);
   // const [buttonColor, setButtonColor] = useState("#ccc");
-  
 
   // const answers = useFormAnswers();
 
@@ -27,7 +26,7 @@ const App = () => {
 
   // React.useEffect(() => {
   //   if (answers) {
-  //     console.log(answers)
+  //     console.log(answers);
   //     const sliderBlockKeys = Object.keys(answers).filter(
   //       (key) =>
   //         answers[key].value !== null &&
@@ -84,6 +83,8 @@ const App = () => {
                 name: "custom-slider-block",
                 id: "m0sphvc",
                 attributes: {
+                  titles:
+                    "[btn]Hypothesize[/btn] [btn]Collaborate & Research[/btn] [btn]Architect[/btn] [btn]Synthesize[/btn]",
                   label:
                     "Rate your team’s ability to translate business ideas into hypothesis statements that are clear and measurable.",
                   title: "hypothesize",
@@ -119,6 +120,8 @@ const App = () => {
                 name: "custom-slider-block",
                 id: "0bx465e",
                 attributes: {
+                  titles:
+                    "Hypothesize, Collaborate & Research, Architect, Synthesize",
                   label:
                     "Rate your team's ability to synthesize the results of Continuous Exploration activities into a well-crafted, prioritized ART Backlog.",
                   title: "Collaborate & Research",
@@ -154,6 +157,8 @@ const App = () => {
                 name: "custom-slider-block",
                 id: "co9psz6",
                 attributes: {
+                  titles:
+                    "Hypothesize, Collaborate & Research, Architect, Synthesize",
                   label:
                     "Rate your team's ability to collaborate with business experts and technology experts to define Minimum Marketable Features (MMF) in support of the hypothesis.",
                   title: "Architect",
@@ -189,6 +194,8 @@ const App = () => {
                 name: "custom-slider-block",
                 id: "ojkdbim",
                 attributes: {
+                  titles:
+                    "Hypothesize, Collaborate & Research, Architect, Synthesize",
                   label:
                     "Rate your team's effectiveness at architecting for continuous delivery.",
                   title: "Synthesize",
@@ -236,6 +243,7 @@ const App = () => {
                 name: "custom-slider-block",
                 id: "pkuftjb",
                 attributes: {
+                  titles: "Develop, Build, Test End-to-End, Stage",
                   label:
                     "Rate your team's ability to synthesize the results of Continuous Exploration activities into a well-crafted, prioritized ART Backlog.",
                   title: "Develop",
@@ -271,6 +279,7 @@ const App = () => {
                 name: "custom-slider-block",
                 id: "ngljcvf",
                 attributes: {
+                  titles: "Develop, Build, Test End-to-End, Stage",
                   label:
                     "Rate your team's effectiveness at building and integrating continuously.",
                   title: "Build",
@@ -306,6 +315,7 @@ const App = () => {
                 name: "custom-slider-block",
                 id: "jvn21yn",
                 attributes: {
+                  titles: "Develop, Build, Test End-to-End, Stage",
                   label:
                     "Rate your team's effectiveness at testing continuously, end-to-end in production-like environments.",
                   title: "Test End-to-End",
@@ -341,6 +351,7 @@ const App = () => {
                 name: "custom-slider-block",
                 id: "zeuedpa",
                 attributes: {
+                  titles: "Develop, Build, Test End-to-End, Stage",
                   label:
                     "Rate your team's ability to stage Features in full production-like (non-test) environments for final validation prior to production deployment.",
                   title: "Stage",
@@ -388,6 +399,7 @@ const App = () => {
                 name: "custom-slider-block",
                 id: "2l0q9sg",
                 attributes: {
+                  titles: "Deploy, Verify, Monitor, Respond",
                   label:
                     "Rate your team's ability to continuously deploy Features to production as well as the ability to control their visibility using feature toggles and/or other means.",
                   title: "Deploy",
@@ -423,6 +435,7 @@ const App = () => {
                 name: "custom-slider-block",
                 id: "hu7acqd",
                 attributes: {
+                  titles: "Deploy, Verify, Monitor, Respond",
                   label:
                     "Rate your team's ability to accurately determine deployment success or failure and ability to roll back or fix forward as appropriate to correct deployment issues.",
                   title: "Verify",
@@ -458,6 +471,7 @@ const App = () => {
                 name: "custom-slider-block",
                 id: "svll4r9",
                 attributes: {
+                  titles: "Deploy, Verify, Monitor, Respond",
                   label:
                     "Rate your team's effectiveness at monitoring the full solution stack and ability to analyze Feature value based on these events.",
                   title: "Monitor",
@@ -493,6 +507,7 @@ const App = () => {
                 name: "custom-slider-block",
                 id: "jog5xet",
                 attributes: {
+                  titles: "Deploy, Verify, Monitor, Respond",
                   label:
                     "Rate your team's effectiveness at proactively detecting high severity production issues, identifying root causes using monitoring systems, and quickly resolving issues by building, testing, and deploying fixes through the pipeline (versus applying changes directly in production).",
                   title: "Respond",
@@ -540,6 +555,7 @@ const App = () => {
                 name: "custom-slider-block",
                 id: "z77x4df",
                 attributes: {
+                  titles: "Release, Stabilize, Measure, Learn",
                   label:
                     "Rate your team's ability to release Features to users on demand using feature toggles, blue/green environments, canary releases, and so on.",
                   title: "Release",
@@ -575,6 +591,7 @@ const App = () => {
                 name: "custom-slider-block",
                 id: "vcavacg",
                 attributes: {
+                  titles: "Release, Stabilize, Measure, Learn",
                   label:
                     "Rate your team's effectiveness at maintaining stable Solutions that avoid unplanned down time and security breaches.",
                   title: "Stabilize",
@@ -610,6 +627,7 @@ const App = () => {
                 name: "custom-slider-block",
                 id: "2eg2xxo",
                 attributes: {
+                  titles: "Release, Stabilize, Measure, Learn",
                   label:
                     "Rate your team's ability to collect objective information about the actual value realized by Features, so that it can inform strategic financial decisions.",
                   title: "Measure",
@@ -645,6 +663,7 @@ const App = () => {
                 name: "custom-slider-block",
                 id: "buiwzjz",
                 attributes: {
+                  titles: "Release, Stabilize, Measure, Learn",
                   label:
                     "Please rate your team's ability to make strategic, pivot-or-persevere decisions based on empirical performance data and commitment to actively applying those insights to continuously improve the pipeline.",
                   title: "Learn",

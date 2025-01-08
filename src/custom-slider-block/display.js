@@ -6,6 +6,8 @@ const CustomSliderDisplay = (props) => {
   const {
     id,
     attributes,
+    titles,
+    label,
     setIsValid,
     setIsAnswered,
     setValidationErr,
@@ -47,6 +49,19 @@ const CustomSliderDisplay = (props) => {
     <div
       className={css`
         padding: 10px;
+
+        .title {
+        display: inline-block;
+        border: 1px solid #2b35ee;
+        border-radius: 20px;
+        padding: 8px 8px;
+        font-size: 12px;
+        color: #2b35ee;
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        margin: 4px;
+        text-align: center;
+      }
       `}
     >
       <label
@@ -98,6 +113,7 @@ const CustomSliderDisplay = (props) => {
         >
           {val || min}
         </span>
+        
       </div>
       <div
         className={css`
@@ -126,6 +142,16 @@ const CustomSliderDisplay = (props) => {
       )}
     </div>
   );
+};
+
+const markdownToHTML = (markdown) => {
+  const html = markdown
+    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>") // Gras
+    .replace(/__(.*?)__/g, "<strong>$1</strong>") // Gras alternatif
+    .replace(/_(.*?)_/g, "<em>$1</em>") // Italique
+    .replace(/\n/g, "<br />") // Retour à la ligne
+    .replace(/\[btn\](.*?)\[\/btn\]/g, '<span class="title">$1</span>'); // Apparence bouton
+  return html;
 };
 
 export default CustomSliderDisplay;
